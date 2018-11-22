@@ -8,11 +8,11 @@ The key requirment of time and space is that
 
 *"There may be a massive number of rules (use 500K entries as a baseline), and real world firewalls must be able to store this in a reasonably compact form while introducing only negligible latency to incoming and outgoing network traffic. "*
 
-My solution is to use a map to store the rule, with each existing port number as a key and its corresponding IP ranges as a set as its value. Using such map trades space for time. It takes contants time when querying a port and O(N) time when querying an ip, when N is the number of ip ranges.
+My solution is to use a map to store the rule, with each existing port number as a key and its corresponding IP ranges as a set of [Interval](https://github.com/mwhailie/coding-assignment-firewall/blob/master/src/com/illumio/Interval.java)as its value. Using such map trades space for time. It takes contants time when querying a port and O(N) time when querying an ip, when N is the number of ip ranges.
 
 ## Test
 
-I created a series of units test with both happy path and invalid input in [TestDiver]().
+I created a series of units test with both happy path and invalid input in [TestDiver](https://github.com/mwhailie/coding-assignment-firewall/blob/master/src/com/illumio/TestDriver.java).
 
 I also used a dummy .csv file to test performance of the program and it works fines under a massive number of rules(500K entries). 
 
