@@ -17,12 +17,18 @@ public class Interval implements Comparable<Interval> {
         return end;
     }
 
+    /**
+     * Determine whether this ip/port range contains a certain ip/port x
+     *
+     * @param x the given ip/port number to be determined
+     * @return true if this ip/port range contains a certain ip/port x,
+     * and false otherwise.
+     */
     public boolean contains(long x){
         return x >= start && x <= end;
     }
-    public boolean contains(Interval i){
-        return this.start <= i.getStart() && this.end >= i.getEnd();
-    }
+
+
     @Override
     public int compareTo(Interval i) {
         if(this.start == i.start){

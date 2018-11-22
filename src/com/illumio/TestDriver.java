@@ -3,11 +3,11 @@ package com.illumio;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Driver {
+public class TestDriver {
 
     private Firewall firewall;
 
-    public Driver() {
+    public TestDriver() {
         firewall = new Firewall("fw.csv");
     }
 
